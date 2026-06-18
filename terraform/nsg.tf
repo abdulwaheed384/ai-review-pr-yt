@@ -33,7 +33,7 @@ resource "azurerm_network_security_rule" "allow_http" {
 }
 
 resource "azurerm_network_security_rule" "allow_rdp" {
-  name                        = "Allow-RDP"
+  name                        = "Allow-RDP1"
   priority                    = 300
   direction                   = "Inbound"
   access                      = "Allow"

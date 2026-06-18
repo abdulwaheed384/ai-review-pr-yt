@@ -39,10 +39,12 @@ jobs:
       - name: Terraform Validate
         run: terraform validate
 
+      - name: Install tfsec
+        run: |
+            curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
+
       - name: Run tfsec
-        uses: aquasecurity/tfsec-action@v1.0.3
-        with:
-          working_directory: terraform
+        run: tfsec .
 
       - name: Run Checkov
         uses: bridgecrewio/checkov-action@master
