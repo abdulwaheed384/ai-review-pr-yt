@@ -39,6 +39,8 @@ jobs:
       - name: Terraform Validate
         run: terraform validate
 
+
+         
       - name: Install tfsec
         run: |
             curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
@@ -51,3 +53,4 @@ jobs:
         with:
           directory: terraform
           framework: terraform
+            
