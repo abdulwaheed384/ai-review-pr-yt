@@ -64,11 +64,6 @@ def load_prompt():
 # - Combine them into a single string
 # - Send the complete codebase to Claude
 #
-# Future Videos:
-# - Review only changed files
-# - Include tfsec findings
-# - Include Checkov findings
-# - Include policy context
 #
 # ============================================================
 
