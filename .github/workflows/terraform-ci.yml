@@ -64,7 +64,16 @@ jobs:
           python-version: '3.12'
 
       - name: Install Python Dependencies
-        run: pip install anthropic requests
+        run: pip install requests
+        working-directory: .
+
+      - name: Run AI Review
+        env:
+          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: python ai/review_runner.py
         working-directory: .
 
       - name: Run AI Review
