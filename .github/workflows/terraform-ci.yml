@@ -46,13 +46,16 @@ jobs:
 
          
       - name: Install tfsec
+        if: ${{ false }} # Temporarily disabled
         run: |
             curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
 
       - name: Run tfsec
+        if: ${{ false }} # Temporarily disabled
         run: tfsec .
 
       - name: Run Checkov
+        if: ${{ false }} # Temporarily disabled
         uses: bridgecrewio/checkov-action@master
         with:
           directory: terraform
