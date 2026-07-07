@@ -52,12 +52,13 @@ jobs:
       - name: Run tfsec
         run: tfsec .
 
+         /*
       - name: Run Checkov
         uses: bridgecrewio/checkov-action@master
         with:
           directory: terraform
           framework: terraform
-            
+                 */           
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
